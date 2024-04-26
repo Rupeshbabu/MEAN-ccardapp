@@ -1,0 +1,3 @@
+if you facing cors issue. for temporary solution below setps:
+    1. click win+r in you window system_update
+    2. fill this cmd " chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security " and click enter

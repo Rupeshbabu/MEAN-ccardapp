@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="nav-bar">
+    <div>
+        <a mat-stroked-button class="logo">CC APP</a>
+    </div>
+    <div>
+        <a *ngIf="isToken" mat-stroked-button href="/home">HOME</a>
+        <a *ngIf="isToken" mat-stroked-button href="/card">ADD CARD</a>
+        <a *ngIf="isToken" mat-stroked-button href="/trans">TRANSACTION</a>
+        <a *ngIf="isToken" mat-stroked-button (click)="signOut()" href="#">SIGN OUT</a>
+
+        <a *ngIf="!isToken" mat-stroked-button href="/signin">SIGN IN</a>
+        <a *ngIf="!isToken" mat-stroked-button href="/signup">SIGN UP</a>
+
+    </div>
+</mat-toolbar>

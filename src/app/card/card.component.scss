@@ -1,0 +1,43 @@
+/* credit-card.component.css */
+
+.credit-card {
+    width: 18rem;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  .card-number {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-details-item {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: 500;
+  }
+  
+  .card-logo {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .card-logo img {
+    height: 50px;
+  }
+
+  .disabled {
+    pointer-events: none; /* Disable mouse events */
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+  }
+  
+  

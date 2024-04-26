@@ -1,0 +1,64 @@
+<div class="container mt-5">
+    <div class="row justify-content-center signin-class">
+        <div class="col-6">
+            <mat-card>
+                <mat-card-header>
+                    <div class="col-12">
+                        <mat-card-title class="title-class">SIGN UP</mat-card-title>
+                        <form class="example-form" [formGroup]="signupForm">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Username</mat-label>
+                                <input type="text" matInput formControlName="username" placeholder="*** - *** - ****">
+                                <mat-error
+                                    *ngIf="signupForm.hasError('required', 'username') && signupForm.controls['username'].dirty">
+                                    Username is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput formControlName="email" placeholder="Ex. abc@example.com">
+                                <mat-error *ngIf="signupForm.hasError('email', 'email')">
+                                    Please enter a valid email address
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="signupForm.hasError('required', 'email') && signupForm.controls['email'].dirty">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="password"
+                                    placeholder="*** - *** - ****">
+                                <mat-error
+                                    *ngIf="signupForm.hasError('required', 'password') && signupForm.controls['password'].dirty">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Mobile Number</mat-label>
+                                <input type="text" matInput formControlName="mobile" placeholder="*** - *** - ****">
+                                <mat-error
+                                    *ngIf="signupForm.hasError('required', 'mobile') && signupForm.controls['mobile'].dirty">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+
+                    </div>
+
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button mat-button>CANCEL</button>
+                    <button mat-button color="primary" [disabled]="signupForm.invalid"
+                        [class.disabled]="signupForm.invalid" (click)="signup()">SUBMIT</button>
+                </mat-card-actions>
+                <mat-card-footer>
+                    <mat-progress-bar *ngIf="isProgressBar" mode="indeterminate"></mat-progress-bar>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

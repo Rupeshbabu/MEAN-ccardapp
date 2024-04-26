@@ -1,0 +1,38 @@
+<div class="row m-3">
+
+
+  <div class="col-12 text-right mb-5">
+    <button mat-flat-button color="primary" (click)="openDialog()">Add card</button>
+  </div>
+
+  <div class="col-3" *ngFor="let card of cards.cards" [ngClass]="{'disabled': isExpired(card.expiryDate)}">
+    <!-- credit-card.component.html -->
+
+    <mat-card class="credit-card">
+      <mat-card-header>
+        <mat-card-title>{{card.cardHolderName}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="card-number">{{card.cardNumber | cardNumberFormatter}}</div>
+        <div class="card-details">
+          <div class="card-details-item">
+            <div class="label">Bank</div>
+            <div class="value">{{card.bankName | uppercase}}</div>
+          </div>
+          <div class="card-details-item">
+            <div class="label">Expires</div>
+            <div class="value">{{card.expiryDate | date: 'MM/yy'}}</div>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <!-- <div class="card-logo">
+      <img src="card-logo.png" alt="Card Logo">
+      <span>{{card.bankName}}</span>
+    </div> -->
+      </mat-card-footer>
+    </mat-card>
+
+  </div>
+
+</div>

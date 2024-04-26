@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>ADD CARD</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="addCardForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nick Name</mat-label>
+            <input type="text" matInput formControlName="nickName" placeholder="*** - *** - ****">
+            <mat-error
+                *ngIf="addCardForm.hasError('required', 'nickName') && addCardForm.controls['nickName'].dirty">
+                Nick Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Card Holder Name</mat-label>
+            <input type="text" matInput formControlName="cardHolderName" placeholder="*** - *** - ****">
+            <mat-error
+                *ngIf="addCardForm.hasError('required', 'cardHolderName') && addCardForm.controls['cardHolderName'].dirty">
+                Card Holder Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Card Number</mat-label>
+            <input type="text" matInput formControlName="cardNumber" placeholder="*** - *** - ****">
+            <mat-error
+                *ngIf="addCardForm.hasError('required', 'cardNumber') && addCardForm.controls['cardNumber'].dirty">
+                Card Number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Bank Name</mat-label>
+            <input type="text" matInput formControlName="bankName" placeholder="*** - *** - ****">
+            <mat-error
+                *ngIf="addCardForm.hasError('required', 'bankName') && addCardForm.controls['bankName'].dirty">
+                Bank Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Expiry Date</mat-label>
+            <input type="text" formControlName="expiryDate" placeholder="*** - *** - ****">
+            <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker> -->
+            <mat-error
+                *ngIf="addCardForm.hasError('required', 'expiryDate') && addCardForm.controls['expiryDate'].dirty">
+                Expiry Date is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>
